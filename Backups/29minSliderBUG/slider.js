@@ -18,7 +18,7 @@ const buttons = document.querySelectorAll(".button");
 buttons[0].style.backgroundColor = "white";
 
 const resetBg = () => {
-    buttons.forEach((button) => {
+    buttons.forEach((button)=>{
         button.style.backgroundColor = "transparent";
     })
 }
@@ -38,11 +38,9 @@ const nextSlide = () => {
 }
 
 const prevSlide = () => {
-    slider.style.transform = `translateX(-${(slideNumber - 2) * 800}px)`;
+    slider.style.transform = `translateX(${-slideNumber * 800}px)`;
     slideNumber--;
 }
-
-//slidenumber=3 then prevSlide() then slidenumber=2 AKA PG2 AKA `translateX(-${slideNumber-2=1} * 800)px`
 
 const getFirstSlide = () => {
     slider.style.transform = `translateX(0px)`;
@@ -50,13 +48,13 @@ const getFirstSlide = () => {
 }
 
 const getLastSlide = () => {
-    slider.style.transform = `translateX(${(length - 1) * 800}px)`;
-    slideNumber = length;
+    slider.style.transform = `translateX(${length - 1}px)`;
+    slideNumber = length - 1;
 }
 
 const changeColor = () => {
     resetBg()
-    buttons[slideNumber - 1].style.backgroundColor = "white";
+    buttons[slideNumber-1].style.backgroundColor = "white";
 }
 
 right.addEventListener("click", () => {
